@@ -1,0 +1,34 @@
+import random
+
+answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it',
+           'As I see it, yes', 'Most likely', 'Outlook good', 'Yes Signs point to yes', 'Reply hazy', 'try again',
+           'Ask again later', 'Better not tell you now', 'Cannot predict now', 'Concentrate and ask again',
+           'Dont count on it', 'My reply is no', 'My sources say no', 'Outlook not so good', 'Very doubtful']
+#these are all the randomized answers in which will be paired with your question
+
+print('Hello World, I am the Magic 8 Ball, What is your name?')
+name = input()
+print('hello ' + name)
+#this is simple by just asking what your name is
+
+def Magic8Ball():
+    print('Ask me a question.')
+    input()
+    print(answers[random.randint(0, len(answers) - 1)])
+    print('I hope that helped!')
+    Replay()
+#you first ask a question then it gives you a random answer then repeats the process by telling u to ask another question
+
+def Replay():
+    print('Do you have another question? [Y/N] ')
+    reply = input()
+    if reply == 'Y':
+        Magic8Ball()
+    elif reply == 'N':
+        exit()
+    else:
+        print('I apologize, I did not catch that. Please repeat.')
+        Replay()
+#this is a request for the user to ask another question. If no the process exits, if yes it repeats the whole process.
+
+Magic8Ball()
