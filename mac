@@ -1,0 +1,85 @@
+#This is the parent class of computers
+class Computer:
+   def __init__(self,name,cpu,gpu,memory,storage):
+       self.name = name
+       self.cpu = cpu
+       self.gpu = gpu
+       self.memory = memory
+       self.storage = storage
+   def print_specs(self):
+       print("ITEM: {}".format(self.name))
+       print("CPU: {}\nGRAPHICS: {}\nMEMORY: {}\nSTORAGE: {}".format(self.cpu,self.gpu,self.memory,self.storage))
+       print()
+  #This defines each product with their varaible that are going to be defined in the next paragraph of code.
+class Macbook_Air(Computer):
+   def __init__(self,name,cpu,gpu,memory,storage):
+       Computer.__init__(self,name,cpu,gpu,memory,storage)
+class Macbook_Pro13(Computer):
+   def __init__(self,name, cpu, gpu, memory, storage):
+       Computer.__init__(self,name, cpu, gpu, memory, storage)
+class MacbookPro16(Computer):
+   def __init__(self, name, cpu, gpu, memory, storage):
+       Computer.__init__(self,name, cpu, gpu, memory, storage)
+class iMac(Computer):
+   def __init__(self, name, cpu, gpu, memory, storage):
+       Computer.__init__(self,name, cpu, gpu, memory, storage)
+class MacPro(Computer):
+   def __init__(self, name, cpu, gpu, memory, storage):
+       Computer.__init__(self,name, cpu, gpu, memory, storage)
+class MacMini(Computer):
+   def __init__(self, name, cpu, gpu, memory, storage):
+       Computer.__init__(self,name, cpu, gpu, memory, storage)
+ #This is a list of all the products on the apple store
+air1 = Macbook_Air("MacBook Air $999", "8-core CPU", "7-core GPU", "8GB", "256GB SSD")
+air2 = Macbook_Air("MacBook Air 1249$", "8-core CPU", "8-core GPU", "8GB", "512GB SSD")
+pro13_1 = Macbook_Pro13("MacBook Pro 13in $1300", "8-core CPU", "8-core GPU", "8GB", "256GB SSD")
+pro13_2 = Macbook_Pro13("MacBook Pro 13in $1499", "8-core CPU", "8-core GPU", "8GB", "512GB SSD")
+pro13_3 = Macbook_Pro13("MacBook Pro Intel 13in $1799", "2.0GHz Intel Core i5 quad-core processor", "Intel Iris Plus Graphics", "16GB", "512GB SSD")
+pro13_4 = Macbook_Pro13("MacBook Pro Intel 13in $1999", "2.3GHz Intel Core i7 quad-core processor", "Intel Iris Plus Graphics", "16GB", "1TB SSD")
+pro16_1 = MacbookPro16("MacBook 16in $2399", "2.6GHz Intel Core i7 6-core processor", "AMD Radeon Pro 5300M", "16GB", "512GB SSD")
+pro16_2 = MacbookPro16("MacBook 16in $2799", "2.3GHz Intel Core i9 8-core processor", "AMD Radeon Pro 5500M", "16GB", "1TB SSD")
+imac1 = iMac("iMac 21.5 inch $1099", "2.3GHz Intel Core i5 dual-core processor", "Intel Iris Plus Graphics 640", "8GB", "256GB SSD")
+imac2 = iMac("iMac 21.5 inch $1299", "3.6GHz Intel Core i3 quad-core processor", "Radeon Pro 555X", "8GB", "256GB SSD")
+imac3 = iMac("iMac 21.5 inch $1499", "3.0GHz Intel Core i5 6-core processor", "Radeon Pro 560X", "8GB", "256GB SSD")
+imac4 = iMac("iMac 27 inch $1799", "3.1GHz  Intel Core i5 6-core processor", "Radeon Pro 5300", "8GB", "256GB SSD")
+imac5 = iMac("iMac 27 inch $1999", "3.3GHz Intel Core i5 6-core processor", "Radeon Pro 5300", "8GB", "512GB SSD")
+imac6 = iMac("iMac 27 inch $2299", "3.8GHz Intel Core i7 8-core processor", "Radeon Pro 5500 XT", "8GB", "512GB SSD")
+pro1 = MacPro("Mac Pro $4999", "3.0GHz Intel Xeon W 10-core processor", "Radeon Pro Vega 56", "32GB", "1TB SSD")
+mini1 = MacMini("Mac Mini $699", "8-core CPU", "8-core GPU", "8GB", "256GB SSD")
+mini2 = MacMini("Mac Mini $899", "8-core CPU", "8-core GPU", "8GB", "512GB SSD")
+mini3 = MacMini("Mac Mini $1099", "3.0GHz Intel Core i5 6-core processor", "Intel UHD Graphics 630", "8GB", "512GB SSD")
+while True:
+  areyou = input("Are you looking for an Apple product?y/n?")
+  yuu = areyou.capitalize()
+  if yuu == "Y":
+   #This lists the different models for you to choose from
+     computers = ("1) MacBook Air", '2)MacBook Pro 13"', '3) MacBook Pro 16"',"4)iMac","5) Mac Pro", "6) Mac Mini")
+     for computer in computers:
+         print (computer)
+  #This allows us to move onto the next part of the code
+     selection = input("Please check out our products. Choose from numbers 1-6:")
+  #These statements calls upon the function defined. It then prints
+     if selection == "1":
+      Computer.print_specs(air1)
+      Computer.print_specs(air2)
+     if selection == "2":
+      Computer.print_specs(pro13_1)
+      Computer.print_specs(pro13_2)
+      Computer.print_specs(pro13_3)
+      Computer.print_specs(pro13_4)
+     if selection == "3":
+      Computer.print_specs(pro16_1)
+      Computer.print_specs(pro16_2)
+     if selection == "4":
+      Computer.print_specs(imac1)
+      Computer.print_specs(imac2)
+      Computer.print_specs(imac3)
+      Computer.print_specs(imac4)
+      Computer.print_specs(imac5)
+      Computer.print_specs(imac6)
+     if selection == "5":
+      Computer.print_specs(pro1)
+     if selection == "6":
+      Computer.print_specs(mini1)
+      Computer.print_specs(mini2)
+      Computer.print_specs(mini3)
